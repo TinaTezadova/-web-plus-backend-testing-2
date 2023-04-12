@@ -43,9 +43,8 @@ describe('PostsService', () => {
 
     it('should return correct posts for limit option', () => {
       const options = { limit: 2 }
-      const findedPosts = postsService.findMany(options);
-      const mapedPosts = findedPosts.map(item => ({ text: item.text }))
-      expect(mapedPosts).toEqual(expect.arrayContaining(posts.slice(0, options.limit)));
+      const findedPosts = postsService.findMany(options).map(item => ({ text: item.text }));;
+      expect(findedPosts).toEqual(expect.arrayContaining(posts.slice(0, options.limit)));
     });
   });
 });
