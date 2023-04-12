@@ -41,7 +41,7 @@ describe('PostsService', () => {
     });
 
 
-    it('should return correct posts for skip option', () => {
+    it('should return correct posts for limit option', () => {
       const options = { limit: 2 }
       const findedPosts = postsService.findMany(options);
       const mapedPosts = findedPosts.map(item => ({ text: item.text }))
